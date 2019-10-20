@@ -46,7 +46,7 @@ public class CheckliteSolution {
 	}
 	
     public Integer checklite(String skus) {
-    	if(Strings.isNullOrEmpty(skus) || !skus.equals(skus.toUpperCase())){
+    	if(skus == null || !skus.equals(skus.toUpperCase())){
     		return -1;
     	}
     	return calculateSkusWithDiscounts(skus);
@@ -65,8 +65,22 @@ public class CheckliteSolution {
     	
     	Integer result = 0;
     	for(SKU sku : memorySKUs){
-    		result += Math.toIntExact((countA / sku.getDiscount().getNumberOfItems()) * sku.getDiscount().getPrice() + 
-    				(countA % sku.getDiscount().getNumberOfItems()) * sku.getPrice());
+    		if(sku.getSkuName().equals("A")){
+    			result = Math.toIntExact((countA / sku.getDiscount().getNumberOfItems()) * sku.getDiscount().getPrice() + 
+        				(countA % sku.getDiscount().getNumberOfItems()) * sku.getPrice());
+    		}
+    		if(sku.getSkuName().equals("B")){
+    			result = Math.toIntExact((countB / sku.getDiscount().getNumberOfItems()) * sku.getDiscount().getPrice() + 
+        				(countB % sku.getDiscount().getNumberOfItems()) * sku.getPrice());
+    		}
+    		if(sku.getSkuName().equals("C")){
+    			result = Math.toIntExact((countC / sku.getDiscount().getNumberOfItems()) * sku.getDiscount().getPrice() + 
+        				(countC % sku.getDiscount().getNumberOfItems()) * sku.getPrice());
+    		}
+    		if(sku.getSkuName().equals("D")){
+    			result = Math.toIntExact((countD / sku.getDiscount().getNumberOfItems()) * sku.getDiscount().getPrice() + 
+        				(countD % sku.getDiscount().getNumberOfItems()) * sku.getPrice());
+    		}
     	}
     	
     	return result;
@@ -114,4 +128,5 @@ public class CheckliteSolution {
 		}
     }
 }
+
 
