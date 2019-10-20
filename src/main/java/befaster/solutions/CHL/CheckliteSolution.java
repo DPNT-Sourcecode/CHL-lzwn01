@@ -54,6 +54,9 @@ public class CheckliteSolution {
      * @return Integer
      */
     private Integer calculateSkusWithDiscounts(String skus){
+    	if(skus == "") {
+    		return 0;
+    	}
     	long countA = skus.chars().filter(ch -> ch == 'A').count();
     	long countB = skus.chars().filter(ch -> ch == 'B').count();
     	long countC = skus.chars().filter(ch -> ch == 'C').count();
@@ -66,16 +69,14 @@ public class CheckliteSolution {
         				(countA % sku.getDiscount().getNumberOfItems()) * sku.getPrice());
     		}
     		if(sku.getSkuName().equals("B")){
-    			result = Math.toIntExact((countB / sku.getDiscount().getNumberOfItems()) * sku.getDiscount().getPrice() + 
+    			result += Math.toIntExact((countB / sku.getDiscount().getNumberOfItems()) * sku.getDiscount().getPrice() + 
         				(countB % sku.getDiscount().getNumberOfItems()) * sku.getPrice());
     		}
     		if(sku.getSkuName().equals("C")){
-    			result = Math.toIntExact((countC / sku.getDiscount().getNumberOfItems()) * sku.getDiscount().getPrice() + 
-        				(countC % sku.getDiscount().getNumberOfItems()) * sku.getPrice());
+    			result += Math.toIntExact((countC % sku.getDiscount().getNumberOfItems()) * sku.getPrice());
     		}
     		if(sku.getSkuName().equals("D")){
-    			result = Math.toIntExact((countD / sku.getDiscount().getNumberOfItems()) * sku.getDiscount().getPrice() + 
-        				(countD % sku.getDiscount().getNumberOfItems()) * sku.getPrice());
+    			result += Math.toIntExact((countD % sku.getDiscount().getNumberOfItems()) * sku.getPrice());
     		}
     	}
     	
@@ -124,6 +125,7 @@ public class CheckliteSolution {
 		}
     }
 }
+
 
 
 
