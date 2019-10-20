@@ -63,7 +63,13 @@ public class CheckliteSolution {
     	long countC = skus.chars().filter(ch -> ch == 'C').count();
     	long countD = skus.chars().filter(ch -> ch == 'D').count();
     	
-    	return null;
+    	Integer result = 0;
+    	for(SKU sku : memorySKUs){
+    		result += (countA / sku.getDiscount().getNumberOfItems()) * sku.getDiscount().getPrice() + 
+    				(countA % sku.getDiscount().getNumberOfItems()) * sku.getPrice();
+    	}
+    	
+    	return result;
     }
     
     class SKU{
@@ -108,5 +114,3 @@ public class CheckliteSolution {
 		}
     }
 }
-
-
