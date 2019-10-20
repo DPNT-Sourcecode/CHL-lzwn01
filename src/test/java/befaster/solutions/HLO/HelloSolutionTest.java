@@ -18,6 +18,17 @@ public class HelloSolutionTest {
     
     @Test
     public void hello_Null() {
-        assertThat(sum.compute(1, 1), equalTo("Hello world "));
+        assertThat(helloMessage.hello(null), equalTo("Hello world null"));
+    }
+    
+    @Test
+    public void hello_Empty() {
+        assertThat(helloMessage.hello(""), equalTo("Hello world "));
+    }
+    
+    @Test
+    public void hello_Normal() {
+        assertThat(helloMessage.hello("Viktor"), equalTo("Hello world Viktor"));
     }
 }
+
