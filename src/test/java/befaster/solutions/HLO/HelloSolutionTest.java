@@ -31,6 +31,3 @@ public class HelloSolutionTest {
         assertThat(helloMessage.hello("Viktor"), equalTo("Hello, Viktor!"));
     }
 }
-
-
-
