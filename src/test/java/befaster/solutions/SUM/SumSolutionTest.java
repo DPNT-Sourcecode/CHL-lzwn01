@@ -50,4 +50,3 @@ public class SumSolutionTest {
     	sum.compute(101, 101);
     }
 }
-
