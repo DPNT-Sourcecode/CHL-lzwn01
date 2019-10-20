@@ -22,4 +22,3 @@ public class CheckliteSolutionTest {
         assertThat(solution.checklite(null), equalTo(-1));
     }
 }
-
