@@ -52,9 +52,17 @@ public class CheckliteSolution {
     	return calculateSkusWithDiscounts(skus);
     }
     
-    
-    
+    /**
+     * A better approach can be found but I am running out of time.
+     * @param skus
+     * @return Integer
+     */
     private Integer calculateSkusWithDiscounts(String skus){
+    	long countA = skus.chars().filter(ch -> ch == 'A').count();
+    	long countB = skus.chars().filter(ch -> ch == 'B').count();
+    	long countC = skus.chars().filter(ch -> ch == 'C').count();
+    	long countD = skus.chars().filter(ch -> ch == 'D').count();
+    	
     	return null;
     }
     
@@ -100,4 +108,5 @@ public class CheckliteSolution {
 		}
     }
 }
+
 
