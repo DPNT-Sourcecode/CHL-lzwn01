@@ -6,8 +6,10 @@ import befaster.runner.SolutionNotImplementedException;
 public class SumSolution {
 
     public synchronized int compute(int x, int y) {
+    	Optional.
         return x + y;
     }
 
 }
+
 
