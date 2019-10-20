@@ -21,4 +21,10 @@ public class CheckliteSolutionTest {
     public void checklite_Null() {
         assertThat(solution.checklite(null), equalTo(-1));
     }
+    
+    @Test
+    public void checklite_Empty() {
+        assertThat(solution.checklite(""), equalTo(0));
+    }
 }
+

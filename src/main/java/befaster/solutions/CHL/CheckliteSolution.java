@@ -3,10 +3,6 @@ package befaster.solutions.CHL;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.google.common.base.Strings;
-
-import befaster.runner.SolutionNotImplementedException;
-
 public class CheckliteSolution {
 	
 	List<SKU> memorySKUs = null;
@@ -128,5 +124,6 @@ public class CheckliteSolution {
 		}
     }
 }
+
 
 
