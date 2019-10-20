@@ -65,8 +65,8 @@ public class CheckliteSolution {
     	
     	Integer result = 0;
     	for(SKU sku : memorySKUs){
-    		result += (countA / sku.getDiscount().getNumberOfItems()) * sku.getDiscount().getPrice() + 
-    				(countA % sku.getDiscount().getNumberOfItems()) * sku.getPrice();
+    		result += Math.toIntExact((countA / sku.getDiscount().getNumberOfItems()) * sku.getDiscount().getPrice() + 
+    				(countA % sku.getDiscount().getNumberOfItems()) * sku.getPrice());
     	}
     	
     	return result;
@@ -114,3 +114,4 @@ public class CheckliteSolution {
 		}
     }
 }
+
