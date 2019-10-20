@@ -6,10 +6,11 @@ import befaster.runner.SolutionNotImplementedException;
 
 public class CheckliteSolution {
     public Integer checklite(String skus) {
-    	if(Strings.isNullOrEmpty(skus) || skus.length() > 1 || !skus.equals(skus.toUpperCase())){
+    	if(Strings.isNullOrEmpty(skus) || !skus.equals(skus.toUpperCase())){
     		return -1;
     	}
     	return 0;
     }
 }
+
 
