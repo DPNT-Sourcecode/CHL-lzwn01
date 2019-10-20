@@ -9,11 +9,11 @@ public class CheckliteSolution {
     	if(Strings.isNullOrEmpty(skus) || !skus.equals(skus.toUpperCase())){
     		return -1;
     	}
-    	return 0;
+    	return calculateSkusWithDiscounts(skus);
     }
     
     private Integer calculateSkusWithDiscounts(String skus){
-    	
+    	return null;
     }
     
     class SKU{
@@ -58,3 +58,4 @@ public class CheckliteSolution {
 		}
     }
 }
+
